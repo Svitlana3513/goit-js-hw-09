@@ -1,3 +1,7 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+
 const images = [
   {
     preview:
@@ -64,11 +68,13 @@ const images = [
   },
 ];
 
-function createImageGallery(arr) {
-  return arr.map(({ preview, original, description }) =>
+const gallerySet = document.querySelector(".gallery")
+
+const galleryImages = images
+  .map(({ preview, original, description }) =>
     `
   <li class="gallery-item">
-   <a class="gallery-link" href="large-image.jpg">
+   <a class="gallery-link" href="${original}">
       <img
         class="gallery-image"
         src="${preview}"
@@ -78,4 +84,11 @@ function createImageGallery(arr) {
   </li>`
   )
     .join("");
-}
+
+
+gallerySet.insertAdjacentHTML("beforeend", galleryImages);
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: "alt",
+  captionDelay: 250,
+});

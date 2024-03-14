@@ -23,3 +23,71 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.gallery {
+  padding-left: 0;
+  margin-top: 0px;
+  margin-bottom: 0;
+  padding-top: 24px;
+  list-style-type: none;
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 24px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.gallery-image {
+  display: block;
+  width: 360px;
+  height: 200px;
+}
+
+.gallery-image:hover {
+  transform: scale(1.04);
+}
+
+.feedback-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+  height: 408px;
+  width: 296px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.feedback-form>button {
+  width: 95px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #4E75FF;
+  border: none;
+  padding: 8px 16px;
+  color: #fff;
+  margin-top: 16px;
+}
+
+.feedback-form input {
+  width: 360px;
+  height: 40px;
+  resize: none;
+}
+
+.feedback-form textarea {
+  width: 360px;
+  height: 80px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
