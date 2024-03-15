@@ -5,8 +5,8 @@ const message = form.querySelector("textarea");
 function handleInput(event) {
     event.preventDefault();
     const email = form.elements.email.value.trim();
-    const text = form.elements.message.value.trim();
-    const data = JSON.stringify({ email, text });
+    const message = form.elements.message.value.trim();
+    const data = JSON.stringify({ email, message });
     console.log(data);
     localStorage.setItem(STORAGE_KEY, data);
 
@@ -19,7 +19,7 @@ try {
     const data = JSON.parse(jsn);
     console.log(data);
     form.elements.email.value = data.email;
-    form.elements.message.value = data.text;
+    form.elements.message.value = data.message;
 }
 catch {
     console.log(`No saved data`);
@@ -29,7 +29,7 @@ function handleSubmit(event) {
     event.preventDefault();
     localStorage.removeItem(STORAGE_KEY);
         
-    if (form.elements.email.value === "") {
+    if (form.elements.email.value === "" ) {
         alert(`Please,fill the form!`);
     }
     if(form.elements.message.value === "") {
