@@ -29,13 +29,11 @@ function handleSubmit(event) {
     event.preventDefault();
     localStorage.removeItem(STORAGE_KEY);
         
-    if (form.elements.email.value === "" ) {
+    if (form.elements.email.value === "" || form.elements.message.value === "") {
         alert(`Please,fill the form!`);
+        return;
     }
-    if(form.elements.message.value === "") {
-        alert(`Please,fill the form!`);
-                      
-    }
+   
     else {
         console.log(form.elements.email.value, form.elements.message.value);
     }
